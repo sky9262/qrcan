@@ -4,6 +4,7 @@
 import cv2
 import sys
 import os
+from pyzbar import pyzbar
 
 try:
     inpt = sys.argv[1]
@@ -14,14 +15,17 @@ except:
     sys.exit(1)
 
 def loadImg(inpt):
+    tmp = []
     images = []
     if os.path.isdir(inpt):
         for filename in os.listdir(inpt):
             img = os.path.join(inpt,filename)
             if img is not None:
-                images.append(img)
+                tmp.append(img)
     else:
-         images.append(inpt)        
+         tmp.append(inpt)   
+    for img in sorted(tmp,key=len):
+        images.append(img)          
     return images
     
     
@@ -31,9 +35,6 @@ print("\nQR code data is:\n")
 
 for _file in files:
     img = cv2.imread(_file)
-    detector = cv2.QRCodeDetector()
-    data, bbox, straight_qrcode = detector.detectAndDecode(img)
-    if bbox is not None:
-        print(data,end="")
+    print(((pyzbar.decode(img))[0].data).decode())
 print("\n")    
 
