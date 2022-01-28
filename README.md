@@ -4,9 +4,10 @@
 ## Requirments
 
 - python3
-- opencv-python
+  - opencv-python
+  - pyzbar
 ```bash
-  sudo pip3 install opencv-python
+  sudo pip3 install opencv-python pyzbar
 ```
 
 ## Usage
