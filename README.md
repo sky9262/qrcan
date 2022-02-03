@@ -21,6 +21,22 @@ If you have more than one qr code images, copy/move all the qr code images in on
 ```bash
 python3 qrcan.py ./demo/path/
 ```
+
+## Installation
+```bash
+sudo bash install.sh
+```
+## Usage : After install
+
+For one qr code image:
+```bash
+qrcan demo.png
+```
+If you have more than one qr code images, copy/move all the qr code images in one folder then provide the path to qrcan.py
+
+```bash
+qrcan ./demo/path/
+```
 ## 🔗 Links
 [![blog](https://img.shields.io/badge/blog-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://sky9262.tistory.com/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sky9262/)
